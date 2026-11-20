@@ -187,6 +187,21 @@
   .rules div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;text-align:center}
   .rules strong{display:block;font-size:2.2rem;color:var(--gold);line-height:1}
   .rules span{color:var(--muted);font-size:.9rem}
+
+/* faixa "Mais de 350 disparos" */
+.shots{position:relative;margin-top:22px;border-radius:14px;overflow:hidden;border:2px solid var(--gold);min-height:260px;display:flex;align-items:center;justify-content:center;text-align:center;background:#000}
+.shots img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 80%;opacity:.5}
+.shots div{position:relative;padding:34px 18px}
+.shots strong{display:block;font-family:"Oswald",sans-serif;font-size:clamp(2.2rem,7vw,5rem);line-height:1.05;color:var(--gold);text-transform:uppercase;letter-spacing:.02em;text-shadow:0 4px 24px rgba(0,0,0,.85)}
+.shots span{display:block;margin-top:8px;color:#fff;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem}
+/* avisos antes da inscricao */
+.notice{max-width:820px;margin:44px auto 0;border:1px solid var(--gold);border-radius:12px;padding:22px 24px;background:rgba(240,181,11,.07);text-align:left}
+.notice h3{font-size:1.2rem;margin-bottom:12px;color:var(--gold)}
+.notice ul{list-style:none;display:grid;gap:12px;margin:0;padding:0}
+.notice li{position:relative;padding-left:24px;color:#e6e6e6}
+.notice li::before{content:"!";position:absolute;left:2px;top:0;color:var(--gold);font-weight:800}
+.bonuses{max-width:860px;margin:0 auto 44px}
+.sub-h{font-family:"Oswald",sans-serif;letter-spacing:.08em;text-transform:uppercase;font-size:1.05rem;color:var(--gold);margin:26px 0 8px}
 </style>
 </head>
 <body>
@@ -226,11 +241,12 @@
     </div>
 
     <div class="stats reveal">
-      <div class="stat"><strong>80 h/a</strong><span>de carga horária total</span></div>
+      <div class="stat"><strong>100 h/a</strong><span>de carga horária total</span></div>
       <div class="stat"><strong>12</strong><span>disciplinas</span></div>
       <div class="stat"><strong>32 h/a</strong><span>de manejo e técnicas de tiro</span></div>
       <div class="stat"><strong>IN 111</strong><span>parâmetros da Polícia Federal</span></div>
     </div>
+    <div class="shots reveal"><img src="img/mesa-armas.jpg" alt="Armas, carregadores e munição sobre a mesa de instrução no estande"><div><strong>Mais de 350 disparos</strong><span>na parte prática do curso</span></div></div>
   </div>
 </section>
 
@@ -278,7 +294,7 @@
 <!-- CONTEÚDO -->
 <section id="conteudo">
   <div class="wrap">
-    <div class="center" style="margin-bottom:46px"><span class="torn">Matriz curricular: <span>80 h/a</span></span></div>
+    <div class="center" style="margin-bottom:46px"><span class="torn">Matriz curricular: <span>100 h/a</span></span></div>
     <div class="grid g2">
       <div class="card reveal"><div class="num">MÓDULO 01 <span class="hrs">8 h/a</span></div><h3>Metodologia, Didática e Psicologia aplicada ao Ensino</h3><p>Como planejar e conduzir aulas, comunicar com clareza e aplicar a psicologia da aprendizagem ao ensino do tiro.</p></div>
       <div class="card reveal"><div class="num">MÓDULO 02 <span class="hrs">4 h/a</span></div><h3>Legislação de Armas de Fogo no Brasil</h3><p>O marco legal das armas de fogo no país e as responsabilidades de quem instrui.</p></div>
@@ -292,6 +308,7 @@
       <div class="card reveal"><div class="num">MÓDULO 10 <span class="hrs">32 h/a</span></div><h3>Manejo de Armas e Técnicas de Tiro</h3><p>O maior bloco do curso: prática intensiva de manejo, técnicas de tiro e condução de linha.</p></div>
       <div class="card reveal"><div class="num">MÓDULO 11 <span class="hrs">4 h/a</span></div><h3>Análise de Alvo</h3><p>Leitura do agrupamento para diagnosticar erros e orientar a correção do atirador.</p></div>
       <div class="card reveal"><div class="num">MÓDULO 12 <span class="hrs">4 h/a</span></div><h3>Avaliações</h3><p>Avaliações teóricas, práticas e didáticas conforme os critérios da IN nº 111.</p></div>
+      <div class="card reveal"><div class="num">MÓDULO 13 <span class="hrs">20 h/a</span></div><h3>Conteúdo complementar</h3><p>[Descreva aqui o conteúdo das 20 h/a complementares.]</p></div>
     </div>
     <div class="center" style="margin-top:34px"><a href="#inscricao" class="btn">Quero me inscrever</a></div>
   </div>
@@ -343,17 +360,29 @@
 <!-- INSTRUTOR -->
 <section id="instrutor" class="grain">
   <div class="wrap instructor">
-    <div class="reveal inst-stack"><img class="inst-main" src="img/espingarda-retrato.jpg" alt="Cledson Neves de Almeira com espingarda no estande"><img class="inst-sub" src="img/aula-bandeira.jpg" alt="Cledson Neves de Almeira ministrando aula"></div>
+    <div class="reveal inst-stack"><img class="inst-main" src="img/instrutor-1.jpg" alt="Cledson Neves de Almeira, instrutor principal do curso"><img class="inst-sub" src="img/instrutor-aula.jpg" alt="Cledson Neves de Almeira ministrando aula"></div>
     <div class="reveal">
-      <span class="tag">Quem conduz o curso</span>
+      <span class="tag">Instrutor principal</span>
       <h2 style="margin-top:16px">Cledson Neves <span class="gold">de Almeira</span></h2>
-      <p style="color:#ddd">Policial Rodoviário Federal, [descreva aqui a trajetória: tempo de carreira, especializações e experiência com instrução de armamento e tiro].</p>
+      <p style="color:#ddd">Policial Rodoviário Federal, instrutor de armamento e tiro, atirador esportivo federado e confederado, competidor e campeão Norte e Nordeste de Tiro pela PRF.</p>
       <ul>
-        <li>Policial Rodoviário Federal (PRF)</li>
-        <li>[Credenciamento / certificações como instrutor]</li>
-        <li>[Cursos e especializações relevantes]</li>
-        <li>[Número de alunos formados / anos de instrução]</li>
+        <li><strong>Mais de 3.000 alunos</strong> avaliados com aprovação em testes de tiro</li>
+        <li>Instrução e avaliação de Guardas Civis Municipais de Petrolina-PE, São Bento do Una-PE, Juazeiro-BA e Rio de Janeiro-RJ</li>
+        <li>Instrutor de Armamento e Tiro</li>
+        <li>Atirador Esportivo Federado e Confederado · Competidor</li>
+        <li>Campeão Norte e Nordeste de Tiro pela PRF</li>
       </ul>
+      <h3 class="sub-h">Formação e especializações</h3>
+      <ul>
+        <li>Habilitação em Fuzil 7.62 e 5.56</li>
+        <li>Balística Terminal · Identificação de Armas de Fogo</li>
+        <li>Emergencista Pré-hospitalar</li>
+        <li>Técnicas e Táticas Policiais · CQB (combate em ambientes confinados)</li>
+        <li>Instrumentos de Menor Potencial Ofensivo</li>
+        <li>Tiro Embarcado em Aeronaves</li>
+        <li>Segurança e Proteção de Autoridades</li>
+      </ul>
+      <p style="color:var(--muted);margin-top:22px;font-size:.95rem">Outros instrutores convidados serão apresentados em breve.</p>
     </div>
   </div>
 </section>
@@ -371,6 +400,21 @@
       <figure class="g-wide reveal"><img src="img/turma-sala-2.jpg" alt="Turma em aula teórica"><figcaption>Aula teórica com turma</figcaption></figure>
       <figure class="reveal"><img src="img/aula-pistola.jpg" alt="Explicação sobre pistola para alunas"><figcaption>Nomenclatura e manuseio</figcaption></figure>
       <figure class="reveal"><img src="img/briefing-estande.jpg" alt="Briefing de segurança com alunos no estande"><figcaption>Briefing de segurança</figcaption></figure>
+      <figure class="g-tall reveal"><img src="img/manejo-espingarda.jpg" alt="Instrutor realizando o manejo de uma espingarda no estande" loading="lazy"><figcaption>Manejo de espingarda</figcaption></figure>
+      <figure class="g-tall reveal"><img src="img/linha-de-tiro.jpg" alt="Instrutor de costas na linha de tiro de um estande coberto" loading="lazy"><figcaption>Linha de tiro</figcaption></figure>
+      <figure class="g-wide reveal"><img src="img/estande-aberto.jpg" alt="Alunos na linha de tiro de um estande aberto" loading="lazy"><figcaption>Instrução em estande aberto</figcaption></figure>
+      <figure class="g-tall reveal"><img src="img/arma-longa.jpg" alt="Instrutor com arma longa apontada" loading="lazy"><figcaption>Técnicas com arma longa</figcaption></figure>
+      <figure class="g-tall reveal"><img src="img/pistola-estande.jpg" alt="Instrutor atirando com pistola em estande coberto" loading="lazy"><figcaption>Tiro com pistola</figcaption></figure>
+      <figure class=" reveal"><img src="img/desmontagem.jpg" alt="Pistola desmontada, carregadores e munição sobre a mesa" loading="lazy"><figcaption>Desmontagem e montagem</figcaption></figure>
+      <figure class=" reveal"><img src="img/municao-carregadores.jpg" alt="Pistola, carregador e munição" loading="lazy"><figcaption>Munição e carregadores</figcaption></figure>
+      <figure class="g-tall reveal"><img src="img/alvo-quatro-cores.jpg" alt="Instrutor explicando o alvo de quatro cores a um aluno" loading="lazy"><figcaption>Alvo de quatro cores</figcaption></figure>
+      <figure class="g-tall reveal"><img src="img/instrutor-estande.jpg" alt="Instrutor com arma longa no estande" loading="lazy"><figcaption>Instrução prática</figcaption></figure>
+      <figure class=" reveal"><img src="img/arma-instrucao.jpg" alt="Pistola de instrução azul sobre a mesa do estande" loading="lazy"><figcaption>Arma de instrução</figcaption></figure>
+      <figure class="g-wide reveal"><img src="img/fuzil-precisao.jpg" alt="Fuzil de precisão com luneta e bipé" loading="lazy"><figcaption>Fuzil de precisão</figcaption></figure>
+      <figure class="g-tall reveal"><img src="img/tiro-ao-ar-livre-1.jpg" alt="Atirador com espingarda em estande ao ar livre" loading="lazy"><figcaption>Tiro ao ar livre</figcaption></figure>
+      <figure class="g-tall reveal"><img src="img/posicao-de-tiro.jpg" alt="Alunos praticando a posição de tiro atrás de barricadas" loading="lazy"><figcaption>Posição de tiro</figcaption></figure>
+      <figure class=" reveal"><img src="img/revolver-bandeira.jpg" alt="Revólver sobre a bandeira do Brasil" loading="lazy"><figcaption>Revólver</figcaption></figure>
+      <figure class="g-tall reveal"><img src="img/aula-teorica.jpg" alt="Instrutor ministrando aula teórica com espingarda em sala" loading="lazy"><figcaption>Aula teórica</figcaption></figure>
     </div>
   </div>
 </section>
@@ -399,21 +443,36 @@
   <div class="wrap">
     <img class="wide-img reveal" src="img/banner.jpg" alt="Curso de Formação de Instrutor de Armamento e Tiro: híbrido, conforme a IN 111 da Polícia Federal, em Pernambuco">
     <div class="center" style="margin-bottom:40px"><span class="torn">Garanta sua <span>vaga</span></span></div>
+    <div class="bonuses">
+      <div class="bonus reveal"><div class="lbl">Bônus 1</div><div><h3>Live tira-dúvidas sobre o credenciamento PF</h3><p>Encontro ao vivo para esclarecer suas dúvidas sobre o processo de credenciamento junto à Polícia Federal.</p></div></div>
+      <div class="bonus reveal"><div class="lbl">Bônus 2</div><div><h3>Simulado e resolução de questões para o credenciamento junto à PF</h3><p>Simulado e resolução de questões para você se preparar para a prova do credenciamento.</p></div></div>
+    </div>
     <div class="offer reveal">
       <div class="plan">CFIAT · Turma [MÊS/ANO]</div>
       <div class="old">de R$ [0.000]</div>
       <div class="price"><small>R$</small> [0.000]</div>
       <div style="color:var(--muted)">ou em até [12]x de R$ [000]</div>
       <ul>
-        <li>80 h/a de formação em formato híbrido</li>
+        <li>100 h/a de formação em formato híbrido</li>
         <li>Plataforma EAD com videoaulas, apostilas e quizzes</li>
         <li>Fase presencial em clube de tiro parceiro em [cidade] – PE</li>
-        <li>32 h/a de manejo e técnicas de tiro</li>
+        <li>32 h/a de manejo e técnicas de tiro, com mais de 350 disparos</li>
+        <li><strong>Bônus 1:</strong> live tira-dúvidas sobre o credenciamento PF</li>
+        <li><strong>Bônus 2:</strong> simulado e resolução de questões para o credenciamento junto à PF</li>
         <li>Preparação para a prova de credenciamento de IAT na PF</li>
         <li>Certificado de conclusão</li>
       </ul>
       <a href="https://wa.me/5581998743262?text=Quero%20me%20inscrever%20no%20CFIAT" class="btn" style="width:100%;justify-content:center">Quero minha vaga</a>
       <p style="color:#888;font-size:.8rem;margin-top:14px">Datas: [DD/MM a DD/MM] · Vagas limitadas</p>
+    </div>
+
+    <div class="notice reveal">
+      <h3>Antes de se inscrever</h3>
+      <ul>
+        <li><strong>Consulte a disponibilidade na sua região.</strong> Quem mora longe pode se inscrever, fazer a parte teórica on-line e se deslocar até um clube parceiro para a parte prática.</li>
+        <li>A prática poderá ser realizada em diversos clubes. Verifique a disponibilidade de algum clube perto de você.</li>
+        <li>No ato da inscrição, definimos o prazo para cumprir a parte teórica e as datas e os clubes da parte prática. A data agendada não será remarcada e não haverá reembolso em caso de ausência (respeitado o direito de arrependimento previsto em lei).</li>
+      </ul>
     </div>
 
     <div class="guarantee reveal" style="margin-top:70px">
@@ -436,6 +495,7 @@
       <details><summary>O curso é presencial ou online?</summary><p>É híbrido. A parte teórica (legislação, balística, didática, segurança, análise de alvo e as primeiras etapas de primeiros socorros e fundamentos do tiro) é feita na plataforma EAD. Manejo, técnicas de tiro, condução de linha, panes e as avaliações práticas acontecem presencialmente em clube de tiro parceiro.</p></details>
       <details><summary>O curso prepara para o credenciamento na Polícia Federal?</summary><p>Sim. O curso segue os parâmetros mínimos do Anexo IV da IN nº 111 da Polícia Federal e tem entre seus objetivos preparar o aluno para a prova de Credenciamento de Instrutor de Armamento e Tiro (IAT).</p></details>
       <details><summary>Como funciona a avaliação?</summary><p>A avaliação é contínua: quizzes e provas teóricas, participação nas atividades, avaliações práticas e avaliação didática. Para concluir, é preciso ter frequência mínima de 90% e aproveitamento mínimo de 60%.</p></details>
+      <details><summary>Moro longe de um clube parceiro. Posso me inscrever?</summary><p>Consulte a disponibilidade na sua região. Você pode se inscrever, fazer a parte teórica on-line e se deslocar até um dos clubes parceiros para a parte prática. A prática poderá ser realizada em diversos clubes: verifique a disponibilidade de algum clube perto de você.</p></details>
       <details><summary>Preciso ter arma própria?</summary><p>[Explique se o armamento e a munição são fornecidos ou se o aluno deve levar.]</p></details>
       <details><summary>O que está incluso no valor?</summary><p>[Liste o que está incluso: munição, material, taxas etc.]</p></details>
     </div>
