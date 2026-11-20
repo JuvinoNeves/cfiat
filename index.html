@@ -73,7 +73,7 @@
     background:linear-gradient(180deg,#2a2a2a,#111);border:1px dashed rgba(255,255,255,.25);
     display:flex;align-items:center;justify-content:center;text-align:center;color:#888;font-size:.85rem;padding:20px}
   .name-tape{position:absolute;bottom:34px;left:50%;transform:translateX(-50%) rotate(-2deg);white-space:nowrap}
-  .name-tape .torn{transform:none;font-size:1.05rem}
+  .name-tape .torn{transform:none;font-size:1.05rem;text-align:center;line-height:1.35;padding:12px 26px}
   @media(max-width:860px){.hero-card{grid-template-columns:1fr}.hero-text{padding:40px 26px}.photo-ph{width:70%}}
 
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
@@ -202,6 +202,21 @@
 .notice li::before{content:"!";position:absolute;left:2px;top:0;color:var(--gold);font-weight:800}
 .bonuses{max-width:860px;margin:0 auto 44px}
 .sub-h{font-family:"Oswald",sans-serif;letter-spacing:.08em;text-transform:uppercase;font-size:1.05rem;color:var(--gold);margin:26px 0 8px}
+
+/* brindes e premios */
+.gifts{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;max-width:1000px;margin:0 auto;align-items:start}
+.gifts h3{font-family:"Oswald",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-size:1.2rem;margin-bottom:14px}
+.gifts ul{list-style:none;display:grid;gap:12px;margin:0 0 6px;padding:0}
+.gifts li{position:relative;padding-left:30px;color:#eee}
+.gifts li::before{content:"✔";position:absolute;left:0;top:0;color:var(--gold);font-weight:700}
+.gift-box{border:1px solid var(--gold);border-radius:14px;padding:26px;background:rgba(240,181,11,.06)}
+.prize{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;margin-bottom:18px}
+.prize:last-child{margin-bottom:0}
+.prize img{width:100%;border-radius:10px;border:1px solid #333;display:block;background:#fff}
+.prize b{display:block;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:4px}
+.prize p{color:#ddd;font-size:.95rem}
+.gifts-note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:22px}
+@media(max-width:760px){.gifts{grid-template-columns:1fr}.prize{grid-template-columns:110px 1fr}}
 </style>
 </head>
 <body>
@@ -236,7 +251,7 @@
       </div>
       <div class="hero-photo">
         <img class="hero-img" src="img/hero.jpg" alt="Cledson Neves de Almeira em sala de aula">
-        <div class="name-tape"><span class="torn">IAT <span>CLEDSON NEVES</span></span></div>
+        <div class="name-tape"><span class="torn">Coordenador do curso:<br><span>IAT CLEDSON NEVES</span></span></div>
       </div>
     </div>
 
@@ -362,7 +377,7 @@
   <div class="wrap instructor">
     <div class="reveal inst-stack"><img class="inst-main" src="img/instrutor-1.jpg" alt="Cledson Neves de Almeira, instrutor principal do curso"><img class="inst-sub" src="img/instrutor-aula.jpg" alt="Cledson Neves de Almeira ministrando aula"></div>
     <div class="reveal">
-      <span class="tag">Instrutor principal</span>
+      <span class="tag">Coordenador do curso · Instrutor principal</span>
       <h2 style="margin-top:16px">Cledson Neves <span class="gold">de Almeira</span></h2>
       <p style="color:#ddd">Instrutor de armamento e tiro, atirador esportivo federado e confederado, competidor e campeão Norte e Nordeste de Tiro pela PRF.</p>
       <ul>
@@ -438,6 +453,37 @@
 </section>
 
 <!-- OFERTA -->
+<!-- ===== BRINDES E PREMIOS ===== -->
+<section id="brindes" class="grain">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:34px"><span class="torn">Presentes para <span>quem se matricula</span></span></div>
+    <h2>Brindes e <span class="gold">prêmios</span></h2>
+    <p class="lead">Além da formação completa, quem se matricula leva os brindes abaixo e ainda concorre a prêmios.</p>
+    <div class="gifts">
+      <div class="reveal">
+        <h3>Grátis para todos os matriculados</h3>
+        <ul>
+          <li><strong>Material didático de todas as aulas</strong>, em PDF</li>
+          <li><strong>Acesso ao app DEFENSIS gratuito por 1 ano</strong></li>
+          <li><strong>Patch emborrachado</strong> do curso</li>
+          <li><strong>Camisa de aluno DEFENSIS</strong> para todos os matriculados</li>
+        </ul>
+      </div>
+      <div class="gift-box reveal">
+        <div class="prize">
+          <img src="img/premio-faca-lanterna.jpg" alt="Faca tática com bainha e lanterna" loading="lazy">
+          <div><b>Sorteio</b><p>Uma <strong>faca tática</strong> e uma <strong>lanterna</strong> sorteadas entre os alunos matriculados.</p></div>
+        </div>
+        <div class="prize">
+          <img src="img/premio-canivete.jpg" alt="Canivete tático multifunção com estojo" loading="lazy">
+          <div><b>Prêmio de desempenho</b><p>Um <strong>canivete tático</strong> para o <strong>melhor colocado na parte prática de tiro</strong>.</p></div>
+        </div>
+      </div>
+    </div>
+    <p class="gifts-note">Imagens ilustrativas. Regulamento do sorteio e critério de classificação na parte prática informados à turma.</p>
+  </div>
+</section>
+
 <section id="inscricao" class="grain">
   <div class="wrap">
     <img class="wide-img reveal" src="img/banner.jpg" alt="Curso de Formação de Instrutor de Armamento e Tiro: híbrido, conforme a IN 111 da Polícia Federal, em Pernambuco">
@@ -456,6 +502,7 @@
         <li>Plataforma EAD com videoaulas, apostilas e quizzes</li>
         <li>Fase presencial em clube de tiro parceiro em [cidade] – PE</li>
         <li>32 h/a de manejo e técnicas de tiro, com mais de 350 disparos</li>
+        <li>Material didático em PDF, camisa de aluno, patch emborrachado e 1 ano grátis do app DEFENSIS</li>
         <li><strong>Bônus 1:</strong> live tira-dúvidas sobre o credenciamento PF</li>
         <li><strong>Bônus 2:</strong> simulado e resolução de questões para o credenciamento junto à PF</li>
         <li>Preparação para a prova de credenciamento de IAT na PF</li>
