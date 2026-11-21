@@ -339,9 +339,10 @@
         <span class="tag">Assista</span>
         <h2 style="margin-top:16px">Conheça o curso <span class="gold">em 20 segundos</span></h2>
         <p style="color:var(--muted);margin-bottom:24px">Veja como é a formação de instrutores de armamento e tiro e prepare-se para o credenciamento na Polícia Federal.</p>
+        <p style="color:var(--muted);font-size:.85rem;margin:-8px 0 20px">O vídeo começa sem som: toque no ícone de volume do player para ativar.</p>
         <a href="#inscricao" class="btn">Quero garantir minha vaga</a>
       </div>
-      <video class="reveal" controls playsinline preload="metadata" src="video/reel-curso-iat.mp4#t=0.5" aria-label="Vídeo de apresentação do curso CFIAT"></video>
+      <video id="reel" class="reveal" controls muted playsinline preload="auto" src="video/reel-curso-iat.mp4#t=0.5" aria-label="Vídeo de apresentação do curso CFIAT"></video>
     </div>
   </div>
 </section>
@@ -642,6 +643,18 @@
   document.getElementById('y').textContent=new Date().getFullYear();
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script>
+/* inicia o video sozinho (sem som, exigencia dos navegadores) quando ele aparece na tela; pausa e volta ao inicio ao sair */
+(function(){
+  var v=document.getElementById("reel"); if(!v||!("IntersectionObserver" in window)) return;
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+      else { v.pause(); try{ v.currentTime=0; }catch(_){} }
+    });
+  },{threshold:0.6}).observe(v);
+})();
 </script>
 </body>
 </html>
