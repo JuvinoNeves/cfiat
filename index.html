@@ -217,6 +217,24 @@
 .prize p{color:#ddd;font-size:.95rem}
 .gifts-note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:22px}
 @media(max-width:760px){.gifts{grid-template-columns:1fr}.prize{grid-template-columns:110px 1fr}}
+
+/* propaganda do aplicativo */
+.appad{display:grid;grid-template-columns:300px 1fr;gap:44px;max-width:1000px;margin:0 auto;align-items:center}
+.phone{width:280px;margin:0 auto;border:3px solid var(--gold);border-radius:34px;padding:16px 12px 18px;background:#0b0b0b;box-shadow:0 0 0 8px var(--gold-soft),0 24px 60px rgba(0,0,0,.6)}
+.phone .notch{width:70px;height:6px;border-radius:6px;background:#333;margin:0 auto 12px}
+.phone .hi{font-family:"Oswald",sans-serif;color:#fff;font-size:1.05rem;margin:0 4px 10px}
+.phone .hi small{display:block;color:var(--muted);font-family:inherit;font-size:.7rem}
+.phone .next{border:1px solid #2a2a2a;border-radius:10px;padding:10px;margin-bottom:10px;background:#141414;font-size:.72rem;color:#ccc}
+.phone .next b{display:block;color:#fff;font-size:.82rem;margin-bottom:6px}
+.phone .go{background:var(--gold);color:#000;text-align:center;font-weight:700;border-radius:8px;padding:9px;font-size:.8rem}
+.phone .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.phone .grid span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:46px;border-radius:9px;font-size:.62rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#1a1a1a;line-height:1.15;padding:4px}
+.appad h3{font-family:"Oswald",sans-serif;font-size:clamp(1.5rem,3.4vw,2.1rem);text-transform:uppercase;line-height:1.1;margin-bottom:12px}
+.appad ul{list-style:none;display:grid;gap:11px;margin:18px 0 24px;padding:0}
+.appad li{position:relative;padding-left:28px;color:#e6e6e6}
+.appad li::before{content:"✔";position:absolute;left:0;color:var(--gold);font-weight:700}
+.appad .free{display:inline-block;background:var(--gold);color:#000;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;padding:6px 14px;border-radius:30px;margin-bottom:14px}
+@media(max-width:820px){.appad{grid-template-columns:1fr;gap:30px}}
 </style>
 </head>
 <body>
@@ -453,6 +471,39 @@
 </section>
 
 <!-- OFERTA -->
+<!-- ===== PROPAGANDA DO APLICATIVO ===== -->
+<section id="aplicativo">
+  <div class="wrap">
+    <div class="appad">
+      <div class="phone reveal" aria-label="Tela inicial do aplicativo DEFENSIS">
+        <div class="notch"></div>
+        <div class="hi">Olá, atirador<small>CAC · DEFENSIS</small></div>
+        <div class="next"><b>Próximo treino</b>Treino A · 30 min · semana: 1 de 2<div class="go" style="margin-top:8px">▶ Iniciar treino</div></div>
+        <div class="grid">
+          <span style="background:#eaf1dc">Cursos</span>
+          <span style="background:#e6ecf3">Documentação</span>
+          <span style="background:#e8eef2">Treinos</span>
+          <span style="background:#e3e9f6">Capacitação de servidor público</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="free">1 ano grátis para alunos do curso</span>
+        <h3>Conheça o app <span class="gold">DEFENSIS</span></h3>
+        <p style="color:var(--muted)">O aplicativo do atirador: treine com método, registre sua evolução e mantenha a sua documentação em dia. Funciona no celular, direto no navegador.</p>
+        <ul>
+          <li><strong>Rotinas e plano de treino</strong> guiados, com o próximo treino sempre à vista</li>
+          <li><strong>Timer de tiro</strong> com comandos de voz</li>
+          <li><strong>Análise de alvo</strong> para entender o seu agrupamento</li>
+          <li><strong>Evolução, histórico e diário em PDF</strong>, com acompanhamento da habitualidade</li>
+          <li><strong>Documentação sempre à mão:</strong> CR, CRAFs, RG e certificados, com alertas de validade</li>
+          <li><strong>Cursos on-line, presenciais e semipresenciais</strong> no mesmo lugar</li>
+        </ul>
+        <a href="https://defensis.vercel.app" class="btn" target="_blank" rel="noopener">Conhecer o aplicativo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== BRINDES E PREMIOS ===== -->
 <section id="brindes" class="grain">
   <div class="wrap">
