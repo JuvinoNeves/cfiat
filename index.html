@@ -243,6 +243,9 @@
 .reel{display:grid;grid-template-columns:1fr auto;gap:44px;max-width:900px;margin:0 auto;align-items:center}
 .reel video{display:block;width:100%;max-width:340px;aspect-ratio:9/16;background:#000;border:3px solid var(--gold);border-radius:22px;box-shadow:0 0 0 8px var(--gold-soft),0 24px 60px rgba(0,0,0,.6);object-fit:cover}
 .reel h2{text-align:left}
+.reel-box{position:relative;width:100%;max-width:340px}
+.reel-som{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);background:var(--gold);color:#000;font-weight:800;border:0;border-radius:30px;padding:12px 18px;font-size:.85rem;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.6);animation:pulsa 1.2s ease-in-out infinite;white-space:nowrap}
+@keyframes pulsa{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.06)}}
 @media(max-width:820px){.reel{grid-template-columns:1fr;gap:28px;justify-items:center}.reel h2{text-align:center}.reel .txt{text-align:center}}
 </style>
 <link rel="icon" type="image/png" href="img/logo-emblema.png">
@@ -343,10 +346,9 @@
         <span class="tag">Assista</span>
         <h2 style="margin-top:16px">Conheça o curso <span class="gold">em 20 segundos</span></h2>
         <p style="color:var(--muted);margin-bottom:24px">Veja como é a formação de instrutores de armamento e tiro e prepare-se para o credenciamento na Polícia Federal.</p>
-        <p style="color:var(--muted);font-size:.85rem;margin:-8px 0 20px">O vídeo começa sem som: toque no ícone de volume do player para ativar.</p>
-        <a href="#inscricao" class="btn">Quero garantir minha vaga</a>
+                <a href="#inscricao" class="btn">Quero garantir minha vaga</a>
       </div>
-      <video id="reel" class="reveal" controls muted playsinline preload="auto" src="video/reel-curso-iat.mp4#t=0.5" aria-label="Vídeo de apresentação do curso CFIAT"></video>
+      <div class="reel-box reveal"><video id="reel" controls playsinline preload="auto" src="video/reel-curso-iat.mp4#t=0.5" aria-label="Vídeo de apresentação do curso CFIAT"></video><button type="button" id="reel-som" class="reel-som" hidden>🔊 Toque para ativar o som</button></div>
     </div>
   </div>
 </section>
@@ -649,13 +651,26 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 <script>
-/* inicia o video sozinho (sem som, exigencia dos navegadores) quando ele aparece na tela; pausa e volta ao inicio ao sair */
+/* Inicia o video sozinho, COM som, quando ele aparece na tela. Os navegadores so liberam som sem toque do visitante em alguns casos
+   (ex.: ele ja tocou/clicou na pagina); quando bloqueiam, o video comeca sem som e o primeiro toque em qualquer lugar (ou no botao) liga o som. */
 (function(){
-  var v=document.getElementById("reel"); if(!v||!("IntersectionObserver" in window)) return;
+  var v=document.getElementById("reel"), btn=document.getElementById("reel-som");
+  if(!v||!("IntersectionObserver" in window)) return;
+  var visivel=false;
+  function ligarSom(){ v.muted=false; v.volume=1; btn.hidden=true; if(v.paused&&visivel){ v.play().catch(function(){}); } }
+  function aoInteragir(){ if(!btn.hidden||v.muted){ if(visivel) ligarSom(); } }
+  ["pointerdown","touchstart","touchend","keydown","click"].forEach(function(ev){ document.addEventListener(ev,aoInteragir,{passive:true}); });
+  btn.addEventListener("click",function(e){ e.stopPropagation(); ligarSom(); });
+  function tocar(){
+    v.muted=false;
+    var p=v.play();
+    if(p&&p.catch) p.catch(function(){ v.muted=true; btn.hidden=false; v.play().catch(function(){}); });
+  }
   new IntersectionObserver(function(es){
     es.forEach(function(e){
-      if(e.isIntersecting){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
-      else { v.pause(); try{ v.currentTime=0; }catch(_){} }
+      visivel=e.isIntersecting;
+      if(visivel){ btn.hidden=true; tocar(); }
+      else { v.pause(); btn.hidden=true; try{ v.currentTime=0; }catch(_){} }
     });
   },{threshold:0.6}).observe(v);
 })();
