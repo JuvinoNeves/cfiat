@@ -247,6 +247,19 @@
 .reel-som{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);background:var(--gold);color:#000;font-weight:800;border:0;border-radius:30px;padding:12px 18px;font-size:.85rem;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.6);animation:pulsa 1.2s ease-in-out infinite;white-space:nowrap}
 @keyframes pulsa{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.06)}}
 @media(max-width:820px){.reel{grid-template-columns:1fr;gap:28px;justify-items:center}.reel h2{text-align:center}.reel .txt{text-align:center}}
+
+/* equipe de instrutores */
+.team{margin-top:56px}
+.team h3.team-t{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.08em;text-align:center;font-size:1.3rem;color:var(--gold);margin-bottom:26px}
+.team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:880px;margin:0 auto}
+.member{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:22px;background:linear-gradient(180deg,#141414,#0b0b0b)}
+.member .avatar{width:120px;height:120px;border-radius:50%;border:2px solid var(--gold);background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-family:"Oswald",sans-serif;font-size:2.2rem;color:var(--gold);object-fit:cover}
+.member h4{font-size:1.25rem;margin-bottom:4px}
+.member .role{color:#ddd;font-size:.95rem;margin-bottom:8px}
+.member .disc{display:inline-block;border:1px solid var(--gold);color:var(--gold);border-radius:30px;padding:3px 12px;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.who{color:var(--gold);font-size:.85rem;font-weight:600;margin-top:10px}
+@media(max-width:820px){.team-grid{grid-template-columns:1fr}}
+@media(max-width:420px){.member{grid-template-columns:1fr;text-align:center;justify-items:center}}
 </style>
 <link rel="icon" type="image/png" href="img/logo-emblema.png">
 </head>
@@ -358,12 +371,12 @@
     <div class="center" style="margin-bottom:46px"><span class="torn">Matriz curricular: <span>100 h/a</span></span></div>
     <div class="grid g2">
       <div class="card reveal"><div class="num">MÓDULO 01 <span class="hrs">8 h/a</span></div><h3>Metodologia, Didática e Psicologia aplicada ao Ensino</h3><p>Como planejar e conduzir aulas, comunicar com clareza e aplicar a psicologia da aprendizagem ao ensino do tiro.</p></div>
-      <div class="card reveal"><div class="num">MÓDULO 02 <span class="hrs">4 h/a</span></div><h3>Legislação de Armas de Fogo no Brasil</h3><p>O marco legal das armas de fogo no país e as responsabilidades de quem instrui.</p></div>
+      <div class="card reveal"><div class="num">MÓDULO 02 <span class="hrs">4 h/a</span></div><h3>Legislação de Armas de Fogo no Brasil</h3><p>O marco legal das armas de fogo no país e as responsabilidades de quem instrui.</p><p class="who">Instrutor: Israel Neves</p></div>
       <div class="card reveal"><div class="num">MÓDULO 03 <span class="hrs">4 h/a</span></div><h3>Armas de Fogo: modelos, espécies e categorias</h3><p>Classificação dos armamentos, suas espécies, categorias e aplicações.</p></div>
       <div class="card reveal"><div class="num">MÓDULO 04 <span class="hrs">4 h/a</span></div><h3>Nomenclatura e funcionalidade de peças</h3><p>Identificação das peças e entendimento do funcionamento mecânico de cada sistema.</p></div>
       <div class="card reveal"><div class="num">MÓDULO 05 <span class="hrs">6 h/a</span></div><h3>Munições e Balística</h3><p>Componentes da munição, comportamento do projétil e fundamentos de balística.</p></div>
       <div class="card reveal"><div class="num">MÓDULO 06 <span class="hrs">2 h/a</span></div><h3>Regras de Segurança</h3><p>As regras que orientam todo o manuseio de armas, dentro e fora do estande.</p></div>
-      <div class="card reveal"><div class="num">MÓDULO 07 <span class="hrs">10 h/a</span></div><h3>Primeiros Socorros</h3><p>Atendimento inicial a ocorrências e conduta em emergências na linha de tiro. Serão 2 h on-line e 8 h presenciais (1 dia).</p></div>
+      <div class="card reveal"><div class="num">MÓDULO 07 <span class="hrs">10 h/a</span></div><h3>Primeiros Socorros</h3><p>Atendimento inicial a ocorrências e conduta em emergências na linha de tiro. Serão 2 h on-line e 8 h presenciais (1 dia).</p><p class="who">Instrutora: BM Victória Neves</p></div>
       <div class="card reveal"><div class="num">MÓDULO 08 <span class="hrs">4 h/a</span></div><h3>Bases, posições e fundamentos do tiro</h3><p>Base, empunhadura, visada, controle de gatilho e posições de tiro. Serão 2 h on-line e 2 h presenciais.</p></div>
       <div class="card reveal"><div class="num">MÓDULO 09 <span class="hrs">6 h/a</span></div><h3>Desmontagem, montagem e panes</h3><p>Manutenção de primeiro escalão, montagem correta e solução de panes.</p></div>
       <div class="card reveal"><div class="num">MÓDULO 10 <span class="hrs">32 h/a</span></div><h3>Manejo de Armas e Técnicas de Tiro</h3><p>O maior bloco do curso: prática intensiva de manejo, técnicas de tiro e condução de linha.</p></div>
@@ -442,7 +455,27 @@
         <li>Tiro Embarcado em Aeronaves</li>
         <li>Segurança e Proteção de Autoridades</li>
       </ul>
-      <p style="color:var(--muted);margin-top:22px;font-size:.95rem">Outros instrutores convidados serão apresentados em breve.</p>
+    </div>
+  </div>
+  <div class="wrap team">
+    <h3 class="team-t">Equipe de instrutores</h3>
+    <div class="team-grid">
+      <div class="member reveal">
+        <div class="avatar" role="img" aria-label="Foto de BM Victória Neves em breve">VN</div>
+        <div>
+          <h4>BM Victória Neves</h4>
+          <p class="role">Bombeira Militar de Pernambuco</p>
+          <span class="disc">Primeiros Socorros</span>
+        </div>
+      </div>
+      <div class="member reveal">
+        <div class="avatar" role="img" aria-label="Foto de Israel Neves em breve">IN</div>
+        <div>
+          <h4>Israel Neves</h4>
+          <p class="role">Comissário da Polícia Civil de Pernambuco (PCPE), há mais de 25 anos</p>
+          <span class="disc">Legislação de Armas de Fogo</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -638,7 +671,7 @@
 </section>
 
 <footer>
-  <div class="wrap"><img class="foot-logo" src="img/logo-defensis.png" alt="DEFENSIS - Custos Domus" loading="lazy" width="170" height="172"><br>CFIAT · Curso de Formação de Instrutores de Armamento e Tiro<br>Instituto DEFENSIS em parceria com clubes de tiro · Instrutor: Cledson Neves de Almeira<br>© <span id="y"></span> · Todos os direitos reservados</div>
+  <div class="wrap"><img class="foot-logo" src="img/logo-defensis.png" alt="DEFENSIS - Custos Domus" loading="lazy" width="170" height="172"><br>CFIAT · Curso de Formação de Instrutores de Armamento e Tiro<br>Instituto DEFENSIS em parceria com clubes de tiro · Coordenação: Cledson Neves de Almeira · Instrutores: BM Victória Neves e Israel Neves<br>© <span id="y"></span> · Todos os direitos reservados</div>
 </footer>
 
 <a class="float-wa" href="https://wa.me/5581998743262" aria-label="WhatsApp">
